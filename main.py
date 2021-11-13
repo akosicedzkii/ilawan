@@ -10,7 +10,7 @@ app = Flask(__name__)
 def hello_world():
     bulb = Bulb("192.168.1.6")
     bulb.toggle()
-    return "<p>Hello, World! Hi again boss balitas</p>" + json.dumps(discover_bulbs())
+    return "<p>Hello, World!</p>" + json.dumps(discover_bulbs())
 
 if __name__ == '__main__':
     app.run( host='0.0.0.0')
