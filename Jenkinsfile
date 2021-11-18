@@ -8,10 +8,10 @@ node {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-  stage('build') {
-        sh 'pip install requirements.txt'
+  stage('pip install') {
+        sh 'pip install requirements.txt -i https://pypi.python.org/simple/'
 }
-  stage('build') {
+  stage('run') {
         sh 'python main.py &'
     
 }
