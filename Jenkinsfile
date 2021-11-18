@@ -8,11 +8,11 @@ node {
       sh "${scannerHome}/bin/sonar-scanner"
     }
   }
-  stage('pip install') {
-        sh 'pip install requirements.txt -i https://pypi.python.org/simple/'
+  stage('run python') {
+      withEnv(["HOME=${env.WORKSPACE}"]) {
+          sh 'pip install --user -r requirements.txt'
+          sh 'python main.py &'
+      }
 }
-  stage('run') {
-        sh 'python main.py &'
-    
 }
 }
