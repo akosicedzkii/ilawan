@@ -77,12 +77,12 @@ input:checked + .slider:before {
     <div class="status">
         {% if bulb.capabilities.power == "off" %}
         <label class="switch">
-            <input type="checkbox"  checked id="select-all-teammembers" name={{ bulb.capabilities.id }}>
+            <input type="checkbox"  checked class="select-all-teammembers" name={{ bulb.capabilities.id }}>
             <span class="slider round"></span>
         </label>
         {% else %}
         <label class="switch">
-            <input type="checkbox"  id="select-all-teammembers"  name={{ bulb.capabilities.id }}>
+            <input type="checkbox"  class="select-all-teammembers"  name={{ bulb.capabilities.id }}>
             <span class="slider round"></span>
         </label>
         {% endif %}
@@ -91,12 +91,8 @@ input:checked + .slider:before {
 
 </body>
 <script>
-$(document).ready(function() {
-    alert("Test"); 
-    $("#select-all-teammembers").click(function() {
-        alert("Test"); 
-    });                 
-});
-
+ $(document).on('click', '.select-all-teammembers', function () {
+    console.log(this)
+});  
 </script>
 </html> 
