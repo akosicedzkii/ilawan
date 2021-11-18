@@ -11,8 +11,7 @@ app = Flask(__name__)
 def hello_world():
     bulb = Bulb("192.168.1.3")
     #bulb.toggle()
-    bulblist = discover_bulbs()
-    for bulblist in a:
+    for a in json.dumps(discover_bulbs()):
         print(a)
     return "<p>Hello, World!</p>" 
 
