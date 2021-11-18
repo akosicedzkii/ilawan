@@ -92,7 +92,7 @@ input:checked + .slider:before {
 </body>
 <script>
  $(document).on('click', '.select-all-teammembers', function () {
-     values = { ip_addr :  $(this).attr("name") }
+     values = { ip_address :  $(this).attr("name") }
     $.ajax({
         url: "/toggle",
         type: "post",
