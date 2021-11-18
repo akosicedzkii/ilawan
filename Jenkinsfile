@@ -13,6 +13,5 @@ node {
           sh 'pip install --user -r requirements.txt'
           sh 'python main.py &'
       }
-}
-}
+  } 
 }
