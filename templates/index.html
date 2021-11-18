@@ -75,7 +75,7 @@ input:checked + .slider:before {
 {% for bulb in bulblist %}
     <label>{{ bulb.ip }}</label>
     <div class="status">
-        {% if bulb.capabilities.power == "off" %}
+        {% if bulb.capabilities.power == "on" %}
         <label class="switch">
             <input type="checkbox"  checked class="select-all-teammembers" name={{ bulb.ip }}>
             <span class="slider round"></span>
