@@ -10,8 +10,8 @@ node {
   }
   stage('run python') {
       withEnv(["HOME=${env.WORKSPACE}"]) {
-          sh 'pip install --user -r requirements.txt'
-          sh 'sudo nohup python main.py > log.txt 2>&1 &'
+          sh 'pip3 install --user -r requirements.txt'
+          sh 'python3 main.py > log.txt 2>&1 &'
       }
   } 
 }
