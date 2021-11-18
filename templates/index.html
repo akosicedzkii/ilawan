@@ -72,7 +72,7 @@ input:checked + .slider:before {
 {% for bulb in bulblist %}
     <label>{{ bulb.ip }}</label>>
     <label class="switch">
-        <input type="checkbox" {% if bulb.status.on %} checked  {% endif %}>
+        <input type="checkbox"  checked >
         <span class="slider round"></span>
     </label>
 {% endfor %}
