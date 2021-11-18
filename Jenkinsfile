@@ -9,10 +9,10 @@ node {
     }
   }
   stage('build') {
-        sh 'python -m pip install requirements.txt'
+        sh 'pip install requirements.txt'
 }
   stage('build') {
-        sh 'python main.py'
+        sh 'python main.py &'
     
 }
 }
