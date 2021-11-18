@@ -11,7 +11,7 @@ node {
   stage('run python') {
       withEnv(["HOME=${env.WORKSPACE}"]) {
           sh 'pip install --user -r requirements.txt'
-          sh 'python main.py &'
+          sh 'nohup python main.py > log.txt 2>&1 &'
       }
   } 
 }
