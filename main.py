@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from yeelight import discover_bulbs
 import json
 from yeelight import discover_bulbs
