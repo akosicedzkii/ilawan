@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <style>
 .switch {
   position: relative;
@@ -74,12 +77,12 @@ input:checked + .slider:before {
     <div class="status">
         {% if bulb.capabilities.power == "off" %}
         <label class="switch">
-            <input type="checkbox"  checked >
+            <input type="checkbox"  checked id="select-all-teammembers" name={{ bulb.capabilities.id }}>
             <span class="slider round"></span>
         </label>
         {% else %}
         <label class="switch">
-            <input type="checkbox" >
+            <input type="checkbox"  id="select-all-teammembers"  name={{ bulb.capabilities.id }}>
             <span class="slider round"></span>
         </label>
         {% endif %}
@@ -87,4 +90,13 @@ input:checked + .slider:before {
 {% endfor %}
 
 </body>
+<script>
+$(document).ready(function() {
+    $("#select-all-teammembers").click(function() {
+        var checkBoxes = $("input[name=recipients\\[\\]]");
+        checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+    });                 
+});
+
+</script>
 </html> 
