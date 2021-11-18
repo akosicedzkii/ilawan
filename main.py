@@ -11,5 +11,11 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html",bulblist= discover_bulbs())
 
+@app.route("/toggle", methods=["POST"])
+def toogle_switch():
+    bulb = Bulb(request.form["ip_address"])
+    bulb.toggle()
+    return "True"
+
 if __name__ == '__main__':
     app.run( host='0.0.0.0')

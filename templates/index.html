@@ -77,12 +77,12 @@ input:checked + .slider:before {
     <div class="status">
         {% if bulb.capabilities.power == "off" %}
         <label class="switch">
-            <input type="checkbox"  checked class="select-all-teammembers" name={{ bulb.capabilities.id }}>
+            <input type="checkbox"  checked class="select-all-teammembers" name={{ bulb.ip }}>
             <span class="slider round"></span>
         </label>
         {% else %}
         <label class="switch">
-            <input type="checkbox"  class="select-all-teammembers"  name={{ bulb.capabilities.id }}>
+            <input type="checkbox"  class="select-all-teammembers"  name={{ bulb.ip }}>
             <span class="slider round"></span>
         </label>
         {% endif %}
@@ -92,7 +92,20 @@ input:checked + .slider:before {
 </body>
 <script>
  $(document).on('click', '.select-all-teammembers', function () {
-    console.log(this)
+     values = { ip_addr :  $(this).attr("name") }
+    $.ajax({
+        url: "/toggle",
+        type: "post",
+        data: values ,
+        success: function (response) {
+
+           // You will get response from your PHP page (what you echo or print)
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+    });
+    console.log($(this).attr("name"))
 });  
 </script>
 </html> 
