@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
 from yeelight import discover_bulbs
 import json
-from yeelight import discover_bulbs
-from yeelight import Bulb
-
+from yeelight import discover_bulbs,Bulb
 
 app = Flask(__name__)
 
