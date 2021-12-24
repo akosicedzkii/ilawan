@@ -71,7 +71,7 @@ input:checked + .slider:before {
 
 <h2>My Lights</h2>
 
-
+<input type="color" name="" id="picker">
 {% for bulb in bulblist %}
     <label>{{ bulb.ip }}</label>
     <div class="status">
@@ -91,6 +91,10 @@ input:checked + .slider:before {
 
 </body>
 <script>
+
+ $("#picker").on('change',function(){
+   alert($("#picker").val())
+ });
  $(document).on('click', '.select-all-teammembers', function () {
      values = { ip_address :  $(this).attr("name") }
     $.ajax({
